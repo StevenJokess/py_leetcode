@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 10:21:05
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 10:28:40
+LastEditTime: 2020-10-10 10:35:17
 Description:
 TODO::
 Reference:D:\onedrive\leetcode\Python\1.two-sum.py
@@ -19,10 +19,12 @@ Reference:D:\onedrive\leetcode\Python\1.two-sum.py
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         dict = {}
+        res = [] # List[List[int]
         for i, num1 in enumerate(nums):
             for j, num2 in enumerate(nums):
                 if 0  - num1 - num2 in dict:
-                    return [dict[0 - num1 - num2], i, j]
+                    res.append([dict[0 - num1 - num2], i, j])
+                    return res
                 dict[num2] = j
             dict[num1] = i
         return []
