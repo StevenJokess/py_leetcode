@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 10:21:05
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 10:51:17
+LastEditTime: 2020-10-10 10:53:44
 Description:
 TODO::
 Reference:D:\onedrive\leetcode\Python\1.two-sum.py
@@ -13,7 +13,8 @@ Reference:D:\onedrive\leetcode\Python\1.two-sum.py
 # @lc app=leetcode id=15 lang=python3
 #
 # [15] 3Sum
-#
+#//Output (48 ms)
+#[[-1,0,1],[-1,-1,2]]
 
 # @lc code=start
 class Solution:
@@ -22,10 +23,10 @@ class Solution:
         res = [] # List[List[int]
         for i, num1 in enumerate(nums):
             for j, num2 in enumerate(nums,i+1):
-                if 0  - num1 - num2 in dict:
-                    if 0 - num1 - num2 <= num1 & num1 <= num2:#保证顺序
+                if 0 - num1 - num2 <= num1 & num1 <= num2:#保证顺序
+                    if 0  - num1 - num2 in dict:
                         res.append([0 - num1 - num2, num1, num2])
-                dict[num2] = j
+                    dict[num2] = j
             dict[num1] = i
         return res
 
