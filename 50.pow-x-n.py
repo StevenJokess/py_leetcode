@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 11:35:17
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 12:04:37
+LastEditTime: 2020-10-10 12:07:06
 Description:
 TODO::
 Reference:https://leetcode-cn.com/problems/powx-n/solution/kuai-su-mi-yang-ti-by-duo1j/
@@ -27,16 +27,16 @@ class Solution:
             return Solution.PowP(1/x, -n)
         else:
             return Solution.PowP(x, n)
-        # @staticmethod
-        def Powp(x, y):
-            res = 1
-            if y == 0:
-                return res
-            while y > 0:
-                if y % 2 == 1 :
-                    res = res * x
-                y = y >> 1
-                x *= x
+    @staticmethod
+    def Powp(x, y):
+        res = 1
+        if y == 0:
+            return res
+        while y > 0:
+            if y % 2 == 1 :
+                res = res * x
+            y = y >> 1
+            x *= x
         return res
             # @lc code=end
 
