@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 12:15:54
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 14:29:04
+LastEditTime: 2020-10-10 14:31:41
 Description:
 TODO::
 Reference:https://leetcode.com/problems/sqrtx/discuss/871095/Python3-solution-using-binary-search
@@ -26,7 +26,7 @@ class Solution:
         r = x//2 if x > 4 else x
         mid = (l+r+1)//2
 
-        while True:
+        while 1:
             squa0 = mid * mid
             squa1 = (mid + 1) * (mid + 1)
             if squa0 <= x < squa1:
