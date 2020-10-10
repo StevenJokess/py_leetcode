@@ -4,12 +4,13 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 11:35:17
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 12:03:12
+LastEditTime: 2020-10-10 12:04:37
 Description:
 TODO::
 Reference:https://leetcode-cn.com/problems/powx-n/solution/kuai-su-mi-yang-ti-by-duo1j/
 https://leetcode.com/problems/powx-n/discuss/749109/Python-Recursive-Solution-Faster-than-99
 https://leetcode.com/problems/powx-n/discuss/345741/python3-Pow(xn)
+https://leetcode.com/problems/powx-n/discuss/632283/Python-Clean-solution
 '''
 
 #
@@ -23,10 +24,10 @@ class Solution:
     def myPow(self, x: float, n: int) -> float:
 
         if n < 0:
-            Solution.PowP(1/x, -n)
+            return Solution.PowP(1/x, -n)
         else:
-            Solution.PowP(x, n)
-
+            return Solution.PowP(x, n)
+        # @staticmethod
         def Powp(x, y):
             res = 1
             if y == 0:
