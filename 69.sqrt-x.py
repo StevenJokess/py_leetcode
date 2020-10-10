@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 12:15:54
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 14:23:48
+LastEditTime: 2020-10-10 14:29:04
 Description:
 TODO::
 Reference:https://leetcode.com/problems/sqrtx/discuss/871095/Python3-solution-using-binary-search
@@ -27,11 +27,13 @@ class Solution:
         mid = (l+r+1)//2
 
         while True:
-            if mid * mid <= x < (mid + 1) * (mid + 1):
+            squa0 = mid * mid
+            squa1 = (mid + 1) * (mid + 1)
+            if squa0 <= x < squa1:
                 break
-            elif mid * mid > x:
+            elif squa0 > x:
                 r = mid
-            elif (mid+1) * (mid+1) <= x:
+            elif squa1 <= x:
                 l = mid
             mid = (l+r+1)//2
         return mid
