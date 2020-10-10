@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 10:21:05
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 10:35:17
+LastEditTime: 2020-10-10 10:39:52
 Description:
 TODO::
 Reference:D:\onedrive\leetcode\Python\1.two-sum.py
@@ -23,11 +23,10 @@ class Solution:
         for i, num1 in enumerate(nums):
             for j, num2 in enumerate(nums):
                 if 0  - num1 - num2 in dict:
-                    res.append([dict[0 - num1 - num2], i, j])
-                    return res
+                    res.append([0 - num1 - num2, num1, num2])
                 dict[num2] = j
             dict[num1] = i
-        return []
+        return res
 
 # @lc code=end
 
