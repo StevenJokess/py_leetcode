@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 14:30:13
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 15:55:33
+LastEditTime: 2020-10-10 16:01:11
 Description:
 TODO::
 Reference:index方法获取的只是第一个索引
@@ -19,15 +19,10 @@ https://blog.csdn.net/Jerry_1126/article/details/88924288
 # @lc code=start
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        leng = len(nums)
-        if leng == 0:
-            return 0
+        l, r = 0, len(nums)-1
+        mid = len(nums)//2  # 让二叉永远左边大，0--8共9个数
 
-        l, r = 0, leng-1
-
-        mid = leng//2  # 让二叉永远左边大，0--8共9个数
-
-        while l < r: # 找，最后使得l=r=mid
+        while l < r: # 试图去找，找不到的话最后使得l=r=mid
             if target == nums[mid]:
                 return mid
             elif target < nums[mid]:
