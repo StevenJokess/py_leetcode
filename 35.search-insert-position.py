@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 14:30:13
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 15:46:00
+LastEditTime: 2020-10-10 15:55:33
 Description:
 TODO::
 Reference:index方法获取的只是第一个索引
@@ -25,39 +25,23 @@ class Solution:
 
         l, r = 0, leng-1
 
-        middle = leng//2  # 让二叉永远左边大，0--8共9个数
+        mid = leng//2  # 让二叉永远左边大，0--8共9个数
 
-        if leng == 1:
-            if target < nums[l]:
-                return l
-            if target == nums[l]:
-                return l
-            if target > nums[r]:
-                return r+1
+        while l < r: # 找，最后使得l=r=mid
+            if target == nums[mid]:
+                return mid
+            elif target < nums[mid]:
+                r = mid  # 现在右边界为原来的中界
+                mid = (l+r)//2  #
+            else:
+                l = mid  # 现在左边界为原来的中界
+                mid = (l+r)//2
 
-        while l < r: # 找
-            # 边界处理
-            if target < nums[l]:
-                return l
-            if target == nums[l]:
-                return l
-            if target == nums[r]:
-                return r
-            if target > nums[r]:
-                return r+1
-            if target == nums[middle]:
-                return middle
-            # ----------------------------------------------------------------
-            if nums[l] < target < nums[middle]:
-                r = middle  # 现在右边界为原来的中界
-                middle = (l+r)//2  #
-            if nums[middle] < target < nums[r]:
-                l = middle  # 现在左边界为原来的中界
-                middle = (l+r)//2
-        if target < nums[middle]:  # 小，就代替原来位置
-            return middle
+        if target < nums[mid]:  # 小，就代替原来位置
+            return mid
         else:
-            return middle+1  # 大，就在原来位置后面一格
+            return mid+1  # 大，就在原来位置后面一格
+
 
 
 # @lc code=end
