@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 10:21:05
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 10:53:44
+LastEditTime: 2020-10-10 11:00:58
 Description:
 TODO::
 Reference:D:\onedrive\leetcode\Python\1.two-sum.py
@@ -13,8 +13,7 @@ Reference:D:\onedrive\leetcode\Python\1.two-sum.py
 # @lc app=leetcode id=15 lang=python3
 #
 # [15] 3Sum
-#//Output (48 ms)
-#[[-1,0,1],[-1,-1,2]]
+
 
 # @lc code=start
 class Solution:
