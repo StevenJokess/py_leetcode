@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 22:34:33
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 23:33:58
+LastEditTime: 2020-10-10 23:34:56
 Description:
 TODO::
 Reference:kanhar22:https://leetcode.com/problems/longest-palindromic-substring/discuss/2954/Python-easy-to-understand-solution-with-comments-(from-middle-to-two-ends).
@@ -24,8 +24,8 @@ class Solution:
         res = ""
 
         for mid in range(len(s)):
-            odd  = self.findPalindrome(self, mid, mid, s)
-            even = self.findPalindrome(self, mid, mid+1, s)
+            odd  = self.findPalindrome(mid, mid, s)
+            even = self.findPalindrome(mid, mid+1, s)
         res = odd if len(odd)>len(even) else even
         return res
 
