@@ -4,7 +4,7 @@ version:
 Author:  StevenJokess https://github.com/StevenJokess
 Date: 2020-10-10 12:15:54
 LastEditors:  StevenJokess https://github.com/StevenJokess
-LastEditTime: 2020-10-10 13:42:09
+LastEditTime: 2020-10-10 13:44:40
 Description:
 TODO::
 Reference:https://leetcode.com/problems/sqrtx/discuss/871095/Python3-solution-using-binary-search
@@ -26,14 +26,14 @@ class Solution:
         middle = (lower + upper)//2
 
         while True:
-            if (middle +2) * (middle +2) < x:
-                lower = (lower + middle)//2
-                middle = (lower + upper)//2
+            if (middle * middle <= x) and ((middle + 1) * (middle + 1) > x) :
+                break
             elif (middle -1) * (middle -1) > x:
                 upper = (upper + middle)//2
                 middle = (lower + upper)//2
-            elif (middle * middle < x) and ((middle + 1) * (middle + 1) > x):
-                break
+            elif (middle +2) * (middle +2) < x:
+                lower = (lower + middle)//2
+                middle = (lower + upper)//2
         return middle
 
 
